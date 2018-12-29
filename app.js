@@ -5,6 +5,9 @@ const mongoose = require("mongoose");
 // App
 const app = express();
 
+// BODY PARSER
+app.use(express.urlencoded({ extended: false }));
+
 // CONNECT TO DB
 const db = require("./config/keys").MongoURI;
 mongoose
