@@ -81,5 +81,11 @@ router.post("/login", (req, res, next) => {
     failureFlash: true
   })(req, res, next)
 });
+// LOGOUT HANDLE
+router.get("/logout", (req, res) => {
+  req.logOut();
+  req.flash('success_msg', 'You have successfully logged out!');
+  res.redirect('/');
+});
 
 module.exports = router;
